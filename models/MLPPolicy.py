@@ -3,6 +3,12 @@ import torch.nn.functional as F
 
 
 class PolicyNetwork(torch.nn.Module):
+    '''
+        Currently this is a very simple feedforward network of 2 linear layers. 
+        The first one takes the current embedding and concatenates it with every existing embedding before passing it through linear layer.
+        (Could re-think how we combine information about the current embedding with other embeddings in the score function)
+        Then we just take this output (after non-linearity) and pass it through a final linear layer to get scores. 
+    '''
     def __init__(self, embedding_dim, hidden_dim):
         super(PolicyNetwork, self).__init__()
         self.fc1 = torch.nn.Linear(embedding_dim * 2, hidden_dim)

@@ -1,4 +1,5 @@
-# Configuration dictionaries
+import torch
+
 model_config = {
     'input_dim': 2,
     'hidden_dim': 32,
@@ -9,9 +10,10 @@ model_config = {
 
 training_config = {
     'learning_rate': 1e-3,
-    'num_episodes': 1000,
+    'num_episodes': 1000, # This is how many episodes you want this model to train right now (not the total up to which you train).
     'log_interval': 100,
-    'gamma': 1.0,
+    'save_interval': 1000,
+    'gamma': 0.95,
     'eps': 1e-9,
     'entropy_beta': 0.01,
     'num_cities': 5
