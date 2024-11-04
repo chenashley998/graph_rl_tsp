@@ -15,7 +15,6 @@ training_config = {
     'save_interval': 1000,
     'gamma': 0.95,
     'eps': 1e-9,
-    'entropy_beta': 0.01,
     'num_cities': 5
 }
 
