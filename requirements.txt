@@ -5,3 +5,4 @@ numpy
 gym
 matplotlib
 tqdm
+python-tsp
